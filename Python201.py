@@ -143,8 +143,97 @@ t = ("Tuple")
 sozluk[t]="Yeni bir sey"
 sozluk
 
+#VERI YAPILARI - Sets
+#Bunlar sirasizdir, degerleri essizdir, degistirilebilirler ve farkli tipleri barindirabilirler.
+s = set()
+s
+
+l = [1,"a","ali",123]
+s = set(l)
+s
+
+t = ("a","ali")
+s = set(t)
+s
 
 
+ali = "selam_dunyali"
+type(ali)
+
+s = set(ali)
+s
+len(s)
+
+l[0] #0.Indeks olan 1'i ekrana yazdirir.
+s[0] #Sets indeks desteklemedigi icin hatayla karsilasilir.
+
+#SETS - Eleman ekleme ve cikarma
+l = ["gelecegi","yazanlar"]
+s=set(l)
+s
+
+dir(s)
+s.add("ile")
+s
+
+s.add("gelecege_git")
+s
+
+s.remove("ile")
+s.pop()
+
+s.discard("ali") #hata verdirmeden eleman silme methodudur.
+#Ali'i basta sildik diyelim ve baska ali yok, remove kullanırsak hata gösterir.
+#Fakat discard dersek hata aldırmadan yoluna devam eder kod akisini bozmaz.
+
+#SETS - Klasik kume islemleri
+
+# =============================================================================
+# difference() ile iki kumenin farkini ya da "-" ifadesi
+# intersection() iki kume kesisimi ya da "&" ifadesi
+# union() iki kumenin birlesimi
+# symmetric_difference() ikisinde de olmayanlari.
+# =============================================================================
+
+
+#difference()
+set1= set([1,3,5])
+set2= set([1,2,5])
+
+set1.difference(set2) #set1'de olup 2'de olmayanlari gosterir.
+set2.difference(set1)
+
+set1.symmetric_difference(set2) #2 ve 3'u gosterir cunku 1'de 2 yok 2'de 3 yok.
+set1-set2
+set2-set1
+
+kesisim= set1.intersection(set2)
+set2.intersection(set1)
+set1 & set2
+
+birlesim = set1.union(set2)
+
+set1.intersection_update(set2) #set2'de var olan degerlere gore gunceller.
+#Ornegin set1'de ham olarak 1,3,5 yazmistik update cekerek set2'de yer alan
+#ortak degerlerden 1 ve 5'i korur fakat set1'dek 3'u silerek seti gunceller.
+
+#Sets Sorgu Islemleri
+set4=set([7,8,9])
+set5=set([5,6,7,8,9,10])
+
+#Ikı kumenin kesisiminin bos olup olmadiginin sorgulanmasi
+set4.isdisjoint(set5) #Ikı kume kesisimi bos mu? Bos olmadigi icin false doner.
+
+#bir kumenin butun elemanlarinin baska bir kume icerisinde yer alip almadigi
+set1.issubset(set2) #set1 set2'nin alt kumesi midir? True doner.
+
+#bir kume diger kumeyi kapsayip kapsar mi?
+set2.issuperset(set1) #Set2 set1'i kapsar bu yuzden true doner.
+
+
+set1 = set([5,7,9])
+set2 = set([5,6,7])
+set1.difference(set2)
 
 
 
